@@ -1,0 +1,17 @@
+* {
+  background-color: black;
+}
+h1 {
+  font-family: 'open_sanslight', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #fff;
+  font-size: 16px;
+}
+footer {
+  font-family: 'open_sanslight', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #C2C2C2;
+  font-size: 16px;
+}
