@@ -54,6 +54,7 @@ gulp.task('lint', function() {
 //Gulp Sass
 gulp.task('sass', function() {
    gulp.src('./sass/style.scss')
+      .pipe(prettyError()) 
       .pipe(sass())
       .pipe(autoprefixer({
          browsers: ['last 2 versions']
@@ -62,18 +63,6 @@ gulp.task('sass', function() {
       .pipe(cssnano())
       .pipe(rename('style.min.css'))
       .pipe(gulp.dest('./build/css'));
-});
-
-gulp.task('js', function (){
-    return gulp.src(['./js/*.js')
-        // add task error-handler 
-        .pipe(prettyError())
- 
-        // create sourcemaps for development 
-        .pipe(sourcemaps.init())
- 
-        // some stuff 
-        .pipe(...);
 });
 
 //Gulp Default Task
