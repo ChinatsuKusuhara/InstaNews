@@ -4,12 +4,17 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     watch = require('gulp-watch'),
     browserSync = require('browser-sync').create(),
-    eslint = require('gulp-eslint');
+    eslint = require('gulp-eslint'),
+    sass = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    cssnano = require('gulp-cssnano'),
+    autoprefixer = require('gulp-autoprefixer'),
+    prettyError = require('gulp-prettyerror');
 
 //Gulp Tasks Below
 
 //Gulp Scripts Task
-gulp.task('scripts', function(){
+gulp.task('scripts', ['lint'], function(){
    gulp.src('./js/*.js')
    .pipe(uglify())  //call the uglify function on the files 
    .pipe(rename({ extname: '.min.js'}))  //rename uglified file 
@@ -29,26 +34,48 @@ gulp.task('browser-sync', function() {
         }
     });  //end of browser-sync init
 
-    gulp.watch(['build/js/*.js', 'index.html', 'style.css']).on('change', browserSync.reload);
+    gulp.watch(['./build/js/*.js', './index.html', './sass/style.scss']).on('change', browserSync.reload);
 });
 
 //Gulp Watch Function
 gulp.task('watch', function(){
-   gulp.watch('js/*.js', ['scripts']);
+   gulp.watch('./js/*.js', ['scripts'])
+   gulp.watch('./sass/*.scss', ['sass']);
 });
 
 //Gulp Lint 
 gulp.task('lint', function() {
-   gulp.src('./js/*.js')
-   .pipe(eslint())
-   .pipe(eslint.format())
-   .pipe(eslint.failAfterError())
+    return gulp.src('./js/*.js')
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(eslint.failAfterError())
 });
  
-gulp.task('default', ['lint'], function () {
-    // This will only run if the lint task is successful... 
+//Gulp Sass
+gulp.task('sass', function() {
+   gulp.src('./sass/style.scss')
+      .pipe(sass())
+      .pipe(autoprefixer({
+         browsers: ['last 2 versions']
+      }))
+      .pipe(gulp.dest('./build/css'))
+      .pipe(cssnano())
+      .pipe(rename('style.min.css'))
+      .pipe(gulp.dest('./build/css'));
+});
+
+gulp.task('js', function (){
+    return gulp.src(['./js/*.js')
+        // add task error-handler 
+        .pipe(prettyError())
+ 
+        // create sourcemaps for development 
+        .pipe(sourcemaps.init())
+ 
+        // some stuff 
+        .pipe(...);
 });
 
 //Gulp Default Task
-gulp.task('default', ['watch', 'browser-sync']);  //this is always in the bottom 
+gulp.task('default', ['watch', 'browser-sync']);  //this is always in the bottom
 

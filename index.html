@@ -1,30 +1,35 @@
 <! DOCTYPE html>
 <html>  
+<head>
+  <meta charset="utf-8">
+  <meta name="news" content="web">  <!-- Confirm -->
+  <title>InstaNews App</title>
+  <link rel="stylesheet" type="text/css" href="reset.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="fonts.css">
+  <script src="https://use.fontawesome.com/e28c7aff88.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
-  <head>
-      <meta charset="utf-8">
-      <meta name="news" content="web">  <!-- Confirm -->
-      <title>InstaNews App</title>
-      <link rel="stylesheet" type="text/css" href="reset.css">
-      <link rel="stylesheet" type="text/css" href="style.css">
-      <link rel="stylesheet" type="text/css" href="fonts.css">
-      <script src="https://use.fontawesome.com/e28c7aff88.js"></script>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-
-    <body>
-      <div>
-       <img class="logo" src="assets/images/nyt-logo.svg" alt="NYT Logo">
-       <h1 class="header">Choose a section:</h1>
-      </div>
-      <div>
-        <ul class="news"></ul>
-      </div>
-      <footer>
-        <i class="fa fa-copyright" aria-hidden="true"></i><span>Copyright 2017 INSTANEWS</span>
-      </footer>
-  <!--JavaScript files-->
-      <script src="build/js/script.min.js"></script>
-    </body>
+<body>
+  <div>
+    <img class="logo" src="assets/images/nyt-logo.svg" alt="NYT Logo">
+    <h1 class="header">Choose a section:</h1>
+    <select name="select">
+      <option value="selection">selections...</option>
+      <option value="selection">selection 2</option>
+      <option value="selection">selection 3</option>
+      <option value="selection">selection 4</option>
+    </select>
+  </div>
+  <div>
+    <ul class="news"></ul>
+  </div>
+  <footer>
+    <i class="fa fa-copyright" aria-hidden="true"></i><span>Copyright 2017 INSTANEWS</span>
+  </footer>
+<!--JavaScript files-->
+  <script src="build/js/script.min.js"></script>
+</body>
 
 </html>
