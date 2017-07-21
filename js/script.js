@@ -6,7 +6,14 @@ $(document).ready(function(){
       dataType= 'jsonp',
       url= 'https://api.nytimes.com/svc/topstories/v2/home.json'+$(".drop-down").val().replace(" ", "+")
     }) //end of .ajax
+    
+    .done (function(data){
+      console.log(data);
+      $.each(data.results, function(key, value){
+        
+      })
+    }) //end of .done
 
-  }); //end of .on
+  }) //end of .on
 });  //end of doc.ready
 
