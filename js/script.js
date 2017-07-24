@@ -18,19 +18,19 @@ $(document).ready(function(){
           dataResults.splice(12);  // .splice reduce the set of matched elements to a subset specified by a range of indices.
 
       $.each(dataResults, function(key, value){
-        var picture = value.multimedia[4].url, 
-            abstract = value.abstract;
-            // articleUrl = value.url; //will take client to a linked site 
+        var images = value.multimedia[4].url, 
+            abstract = value.abstract,
+            newsUrl = value.url; //will take client to a linked site from News App
 
         article += '<li>';
-        article += '<a href=" + articleUrl + ">' ;  //extracting news articles
+        article += '<a href=' + newsUrl + '>' ;  //extracting news articles
         article += '<div class="background" style="background-image:url('; //giving a class to the background
-        article += picture; //images will become a background
+        article += images; //images will become a background
         article += ') "><p class="abstract">';  //created a class called abstract
         article += abstract;  
         article += '</p></div></a></li>';
       });//end of .each
-  
+      
       $('.news').html(article)//to load within <ul>
       
      }) //end of .done
