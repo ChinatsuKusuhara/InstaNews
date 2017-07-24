@@ -19,19 +19,19 @@ $(document).ready(function(){
 
       $.each(dataResults, function(key, value){
         var picture = value.multimedia[4].url, 
-            abstract = value.abstract,
-            articleUrl = value.url; //will take client to a linked site 
+            abstract = value.abstract;
+            // articleUrl = value.url; //will take client to a linked site 
 
         article += '<li>';
-        article += "<a href=' + articleUrl + '>" ;  //extracting news articles
-        article += "<div class='background' style='background-image:url("; //giving a class to the background
+        article += '<a href=" + articleUrl + ">' ;  //extracting news articles
+        article += '<div class="background" style="background-image:url('; //giving a class to the background
         article += picture; //images will become a background
-        article += ") '><p class='abstract'>";  //created a class called abstract
+        article += ') "><p class="abstract">';  //created a class called abstract
         article += abstract;  
-        article += "</p></div></a></li>";
+        article += '</p></div></a></li>';
       });//end of .each
   
-      $(".news").html(article)//to load within <ul>
+      $('.news').html(article)//to load within <ul>
       
      }) //end of .done
   })  //end of .on
