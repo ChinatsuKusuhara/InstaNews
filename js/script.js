@@ -2,24 +2,15 @@ $(document).ready(function(){
   $('.drop-down').on('change', function(event){
     event.preventDefault();
     
-   $('.drop-down').empty();
-
+    var selected = $('.drop-down').val();
+    var  url = 'https://api.nytimes.com/svc/topstories/v2'+ selected + '.json';  //translation from computer language to English
+         url += '?' + $.param({
+          'api-key': '3924f5cbfd774746a80d6b85a0aa79a0'
+    })     //'+=' assigns the result of the var, '?' connects api keys to url, .param = parameter
     $.ajax({
-      method= 'GET',
-      url= 'https://api.nytimes.com/svc/topstories/v2/home.json'
-    }) //end of .ajax
-    
-    .done (function(data){
-      console.log(data);
-      $.each(data.results, function(key, value){
-        $('.drop-down').append('<selection> <option src="' + value.news + '">' + value.collectionName + '</selection>');
-      })//end of .each
-     }) //end of .done
+      method: 'GET',
+      url: url
+    }) //end of .ajax 
 
-    .fail(function(){
-      console.log('anything');
-     $(".drop-down").append("<li>No Results</li>");
-    }) //end of .fail
-  }) //end of .on
-
-});  //end of doc.ready
+  })  //end of .on
+}); //end of doc.ready
