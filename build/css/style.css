@@ -74,16 +74,6 @@ table {
   font-weight: normal;
   font-style: normal; }
 
-footer {
-  font-family: "open_sanslight", sans-serif;
-  font-weight: normal;
-  font-style: normal;
-  color: #C2C2C2;
-  font-size: 16px; }
-
-* {
-  background-color: black; }
-
 .header {
   font-family: "open_sanslight", sans-serif;
   font-weight: normal;
@@ -91,5 +81,15 @@ footer {
   color: #fff;
   font-size: 16px; }
 
+* {
+  background-color: black; }
+
 select {
   background-color: #FFF; }
+
+footer {
+  font-family: "open_sanslight", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #C2C2C2;
+  font-size: 16px; }

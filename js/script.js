@@ -1,9 +1,12 @@
 $(document).ready(function(){
   $('.drop-down').on('change', function(event){
     event.preventDefault();
+    
+   $('.drop-down').empty();
+
     $.ajax({
       method= 'GET',
-      url= 'https://api.nytimes.com/svc/topstories/v2/home.json'+$(".drop-down").val().replace(" ", "+")
+      url= 'https://api.nytimes.com/svc/topstories/v2/home.json'
     }) //end of .ajax
     
     .done (function(data){
@@ -11,7 +14,7 @@ $(document).ready(function(){
       $.each(data.results, function(key, value){
         $('.drop-down').append('<selection> <option src="' + value.news + '">' + value.collectionName + '</selection>');
       })//end of .each
-    }) //end of .done
+     }) //end of .done
 
     .fail(function(){
       console.log('anything');
@@ -20,4 +23,3 @@ $(document).ready(function(){
   }) //end of .on
 
 });  //end of doc.ready
-

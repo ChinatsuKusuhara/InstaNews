@@ -9,7 +9,7 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     cssnano = require('gulp-cssnano'),
     autoprefixer = require('gulp-autoprefixer'),
-    prettyError = require('gulp-prettyerror');
+    prettyError = require('gulp-prettyError');
 
 //Gulp Tasks Below
 
