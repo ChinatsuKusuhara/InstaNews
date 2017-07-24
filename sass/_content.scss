@@ -1,3 +1,26 @@
 select {
-  background-color: #FFF;
+  background-color: #fff;
+  height: 1.5rem;
+  width: 7rem;
+}  //drop-down option
+
+.background {
+  height: 400px;
+  position: relative;
+  width: 25rem;
 }
+
+.abstract {
+  color: $fontWhite;
+  font-family: $openSans;
+	font-weight: 300;
+	font-style: normal;
+  font-size: $fontSize;
+  position: absolute;
+  margin-top: 20em;
+  text-align: center;
+  display: flex;
+  flex: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}  //paragraph of articles
