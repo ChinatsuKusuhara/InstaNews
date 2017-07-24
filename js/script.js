@@ -12,12 +12,12 @@ $(document).ready(function(){
     }) //end of .ajax 
     .done (function(data){
       var article = '';
-      var dataResults = data.results.filter(function(value){
+      var results = data.results.filter(function(value){
             return value.multimedia.length >= 5;
           })  //.filter reduces the set of matched elements 
-          dataResults.splice(12);  // .splice reduce the set of matched elements to a subset specified by a range of indices.
+          results.splice(12);  // .splice reduce the set of matched elements to a subset specified by a range of indices.
 
-      $.each(dataResults, function(key, value){
+      $.each(results, function(key, value){
         var images = value.multimedia[4].url, 
             abstract = value.abstract,
             newsUrl = value.url; //will take client to a linked site from News App
