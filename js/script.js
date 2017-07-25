@@ -1,7 +1,7 @@
 $(document).ready(function(){
   $('.drop-down').on('change', function(){
     $('header').addClass('shrink');
-    $('loader').show();
+    $('gif-loader').show();
     
     var selected = $('.drop-down').val();
     var  url = 'https://api.nytimes.com/svc/topstories/v2/' + selected + '.json';  //translation from computer language to English

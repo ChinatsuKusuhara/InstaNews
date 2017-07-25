@@ -1,12 +1,31 @@
 .front-page {
-  height: 90%;
+  height: 90vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
 }
 .header1 {
+  padding-top: 1rem;
   font-family: $openSans;
 	font-weight: 300;
 	font-style: normal;
   color: $fontWhite;
   font-size: $fontSize;
-  padding-top: 1rem;
-  padding-left: 8rem;
+}
+
+
+.shrink {
+  height: 75px;
+  transition: .75s;
+  padding-top: 7rem;
+
+  img {
+    height: 75px;
+  }
+  
+  .news-grid {
+    margin-top: 1rem;
+    padding-bottom: 7rem;
+  }
 }

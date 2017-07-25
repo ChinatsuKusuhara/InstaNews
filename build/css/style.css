@@ -75,22 +75,45 @@ table {
   font-style: normal; }
 
 .front-page {
-  height: 90%; }
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
 .header1 {
+  padding-top: 1rem;
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
   font-style: normal;
   color: #fff;
-  font-size: 16px;
-  padding-top: 1rem;
-  padding-left: 8rem; }
+  font-size: 16px; }
+
+.shrink {
+  height: 75px;
+  -webkit-transition: .75s;
+  transition: .75s;
+  padding-top: 7rem; }
+  .shrink img {
+    height: 75px; }
+  .shrink .news-grid {
+    margin-top: 1rem;
+    padding-bottom: 7rem; }
 
 * {
   background-color: black; }
 
 .logo {
-  margin: 8rem 5rem 0 5rem; }
+  margin: 0 5rem 0 5rem; }
 
 select {
   background-color: #fff;
@@ -135,11 +158,6 @@ select {
           justify-content: center; }
 
 .news {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   width: 100%;
   height: auto; }
   .news li {
@@ -165,3 +183,6 @@ select {
   font-style: normal;
   color: #C2C2C2;
   font-size: 0.75rem; }
+
+.footer {
+  text-align: center; }
