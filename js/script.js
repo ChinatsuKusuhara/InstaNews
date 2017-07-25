@@ -1,8 +1,9 @@
 $(document).ready(function(){
   $('.drop-down').on('change', function(){
     
+    
     var selected = $('.drop-down').val();
-    var  url = 'https://api.nytimes.com/svc/topstories/v2/'+ selected + '.json';  //translation from computer language to English
+    var  url = 'https://api.nytimes.com/svc/topstories/v2/' + selected + '.json';  //translation from computer language to English
          url += '?' + $.param({
           'api-key': '3924f5cbfd774746a80d6b85a0aa79a0'
     })     //'+=' assigns the result of the var, '?' connects api keys to url, .param = parameter
@@ -23,7 +24,7 @@ $(document).ready(function(){
             newsUrl = value.url; //will take client to a linked site from News App
         article += '<li>';
         article += '<a href=' + newsUrl + '>' ;  //extracting news articles
-        article += '<div class="background" style="background-image:url(' + images + ')" ><p class="abstract">'; //giving a class to the background, assign background, abstract class created.
+        article += '<div class="background" style="background-image:url(' + images + ')" ><p class="abstract">'; //giving a class to the background, assign background, abstract class created.ccccccccccc
         article += abstract;  
         article += '</p></div></a></li>';
       });//end of .each

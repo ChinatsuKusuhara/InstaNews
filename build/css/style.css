@@ -79,20 +79,34 @@ table {
   font-weight: 300;
   font-style: normal;
   color: #fff;
-  font-size: 16px; }
+  font-size: 16px;
+  padding-top: 1rem;
+  padding-left: 8rem; }
 
 * {
   background-color: black; }
 
+.logo {
+  margin: 8rem 5rem 0 5rem; }
+
 select {
   background-color: #fff;
   height: 1.5rem;
-  width: 7rem; }
+  width: 8rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 14px; }
 
 .background {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   height: 400px;
   position: relative;
-  width: 25rem; }
+  width: 100%;
+  background-size: cover;
+  background-position: 50%; }
 
 .abstract {
   color: #fff;
@@ -102,7 +116,11 @@ select {
   font-size: 16px;
   position: absolute;
   margin-top: 20em;
-  text-align: center;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5)));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0, rgba(0, 0, 0, 0.5));
+  line-height: 1.25em;
+  padding-right: 2%;
+  padding-left: 2%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -111,14 +129,28 @@ select {
           flex: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start; }
+          justify-content: center; }
 
-footer {
+.news {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: auto; }
+  .news li {
+    width: 100%;
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%; }
+
+.new-grid {
+  margin: 0 auto;
+  width: 100%; }
+
+.copyright {
   font-family: "Open Sans", sans-serif;
-  font-weight: normal;
+  font-weight: 300;
   font-style: normal;
   color: #C2C2C2;
-  font-size: 16px; }
+  font-size: 0.75rem; }
