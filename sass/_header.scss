@@ -4,6 +4,10 @@
   flex-flow: column;
   justify-content: center;
   align-items: center;
+    @include tablet {
+      flex-flow: row;
+      text-align: center;
+    }
 }
 .header1 {
   padding-top: 1rem;
@@ -27,5 +31,11 @@
   .news-grid {
     margin-top: 1rem;
     padding-bottom: 7rem;
+  }
+}
+.shrink img {
+  @include tablet {
+    height: 55px;
+    margin-bottom: 4rem;
   }
 }
