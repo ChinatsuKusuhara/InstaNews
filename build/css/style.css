@@ -144,7 +144,8 @@ select {
   font-family: "Open Sans", sans-serif;
   font-weight: bold;
   font-style: normal;
-  font-size: 14px; }
+  font-size: 14px;
+  margin-top: 1rem; }
 
 .background {
   display: -webkit-box;
@@ -225,3 +226,7 @@ select {
 
 .footer {
   text-align: center; }
+  @media (min-width: 1000px) {
+    .footer {
+      text-align: inherit;
+      padding-left: 2rem; } }
