@@ -1,7 +1,7 @@
 $(document).ready(function(){
   $('.drop-down').on('change', function(){
-    $('header').addClass('shrink');
-    $('gif-loader').show();
+    $('header').addClass('shrink');  //when screen changes
+    $('.loader').show();  //loader is displayed none on html.
     
     var selected = $('.drop-down').val();
     var  url = 'https://api.nytimes.com/svc/topstories/v2/' + selected + '.json';  //translation from computer language to English

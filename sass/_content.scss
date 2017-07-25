@@ -16,8 +16,6 @@ select {
   width: 100%;
   background-size: cover;
   background-position: 50%;
-  // vertical-align: text-bottom;
-  // grid-template-row: repeat(12,1fr);
 } //article background image 
 
 .abstract {
@@ -35,41 +33,37 @@ select {
   display: flex;
   flex: wrap;
   justify-content: center;
-  //align-items: flex-end;
 }  //paragraph of articles
+
 .news {
   width: 100%;
   height: auto;
 
-  li {
-    width: 100%;
-    flex-basis: 50%;
-  }
-}
-.new-grid {
-  margin: 0 auto;
-  width: 100%;
+    li {
+      width: 100%;
+      flex-basis: 50%;
+    }
 }
 .loader {
   display: none;
-}
+} //animation
 
 .gif-loader {
   height: 100px;
   margin: 0 auto;
   display: block;
-  
+
 }
 .news {
-  @include tablet {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 2rem;
-  }
-  li {
-    @include desktop {
-      flex-basis: 25%;
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 2rem;
     }
-  }
+    li {
+      @include desktop {
+        flex-basis: 25%;
+      }
+    }
 }

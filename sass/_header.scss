@@ -1,16 +1,16 @@
 .front-page {
-  height: 90vh;
+  height: 90vh;  //100vh is full screen, 10vh footer 
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
-    @include tablet {
-      flex-flow: row;
-      text-align: center;
-    }
-    @include desktop {
-      justify-content: flex-start;
-    }
+      @include tablet {  //@include = @content in mixins
+        flex-flow: row;
+        text-align: center;
+      }
+      @include desktop {
+        justify-content: flex-start;
+      }
 }
 .header1 {
   padding-top: 1rem;
@@ -20,21 +20,19 @@
   color: $fontWhite;
   font-size: $fontSize;
 }
-
-
 .shrink {
   height: 75px;
   transition: .75s;
   padding-top: 7rem;
 
-  img {
-    height: 75px;
-  }
-  
-  .news-grid {
-    margin-top: 1rem;
-    padding-bottom: 7rem;
-  }
+    img {
+      height: 75px;
+   }
+
+    .news-grid {
+      margin-top: 1rem;
+      padding-bottom: 7rem;
+    }
 }
 .shrink img {
   @include tablet {
@@ -46,4 +44,4 @@
     height: 76px;
   }
 
-}
+}  //shrink close 
