@@ -66,4 +66,9 @@ select {
     justify-content: center;
     margin-bottom: 2rem;
   }
+  li {
+    @include desktop {
+      flex-basis: 25%;
+    }
+  }
 }

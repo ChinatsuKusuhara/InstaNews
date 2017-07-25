@@ -8,6 +8,9 @@
       flex-flow: row;
       text-align: center;
     }
+    @include desktop {
+      justify-content: flex-start;
+    }
 }
 .header1 {
   padding-top: 1rem;
@@ -38,4 +41,9 @@
     height: 55px;
     margin-bottom: 4rem;
   }
+  @include desktop {
+    margin: 0rem 4rem 5rem 0rem;
+    height: 76px;
+  }
+
 }
