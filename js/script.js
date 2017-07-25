@@ -1,7 +1,7 @@
 $(document).ready(function(){
   $('.drop-down').on('change', function(){
-    $('header').addClass('shrink');  //when screen changes
     $('.loader').show();  //loader is displayed none on html.
+    $('header').addClass('shrink');  //when screen changes
     
     var selected = $('.drop-down').val();
     var  url = 'https://api.nytimes.com/svc/topstories/v2/' + selected + '.json';  //translation from computer language to English
@@ -23,8 +23,8 @@ $(document).ready(function(){
         var images = value.multimedia[4].url, 
             abstract = value.abstract,
             newsUrl = value.url; //will take client to a linked site from News App
-        article += '<li>';
-        article += '<a href=' + newsUrl + '>' ;  //extracting news articles
+        article += '<li >';
+        article += '<a href=' + newsUrl + ' target="_blank" >' ;  //extracting news articles
         article += '<div class="background" style="background-image:url(' + images + ')" ><p class="abstract">'; //giving a class to the background, assign background, abstract class created.ccccccccccc
         article += abstract;  
         article += '</p></div></a></li>';
