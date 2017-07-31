@@ -1,21 +1,24 @@
 //Requiring packages
-var gulp = require('gulp'),
-    uglify = require('gulp-uglify'),
-    rename = require('gulp-rename'),
-    watch = require('gulp-watch'),
-    browserSync = require('browser-sync').create(),
-    eslint = require('gulp-eslint'),
-    sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    cssnano = require('gulp-cssnano'),
-    autoprefixer = require('gulp-autoprefixer'),
-    prettyError = require('gulp-prettyError');
+const gulp = require('gulp'),
+      uglify = require('gulp-uglify'),
+      rename = require('gulp-rename'),
+      watch = require('gulp-watch'),
+      browserSync = require('browser-sync').create(),
+      eslint = require('gulp-eslint'),
+      sass = require('gulp-sass'),
+      autoprefixer = require('gulp-autoprefixer'),
+      cssnano = require('gulp-cssnano'),
+      prettyError = require('gulp-prettyError'),
+      babel = require('gulp-babel');
 
 //Gulp Tasks Below
 
 //Gulp Scripts Task
 gulp.task('scripts', ['lint'], function(){
    gulp.src('./js/*.js')
+   .pipe(babel({
+      presets: ['es2015'] 
+   })) 
    .pipe(uglify())  //call the uglify function on the files 
    .pipe(rename({ extname: '.min.js'}))  //rename uglified file 
    .pipe(gulp.dest('./build/js'))  
@@ -66,5 +69,5 @@ gulp.task('sass', function() {
 });
 
 //Gulp Default Task
-gulp.task('default', ['watch', 'browser-sync']);  //this is always in the bottom
+gulp.task('default', ['watch','babel','lint','browser-sync', 'sass']);  //this is always in the bottom
 
