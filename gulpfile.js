@@ -69,5 +69,5 @@ gulp.task('sass', function() {
 });
 
 //Gulp Default Task
-gulp.task('default', ['watch','babel','lint','browser-sync', 'sass']);  //this is always in the bottom
+gulp.task('default', ['watch','scripts','browser-sync', 'sass']);  //this is always in the bottom
 
