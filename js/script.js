@@ -4,8 +4,8 @@ $(document).ready(function(){
     $('.gif-loader').show();  //loader is displayed none on html.
 
     
-    var selected = $('.drop-down').val();
-    var  url = 'https://api.nytimes.com/svc/topstories/v2/' + selected + '.json';  //translation from computer language to English
+    let selected = $('.drop-down').val();
+    let  url = 'https://api.nytimes.com/svc/topstories/v2/' + selected + '.json';  //translation from computer language to English
          url += '?' + $.param({
           'api-key': '3924f5cbfd774746a80d6b85a0aa79a0'
     })     //'+=' assigns the result of the var, '?' connects api keys to url, .param = parameter
@@ -13,15 +13,15 @@ $(document).ready(function(){
       method: 'GET',
       url: url
     }) //end of .ajax 
-    .done (function(data){
-      var article = '';
-      var results = data.results.filter(function(value){
+    .done ((data) => {
+      let article = '';
+      let results = data.results.filter((value) => {
             return value.multimedia.length >= 5;
-          })  //multimdia array 
+          })  //multi-media array 
           results.splice(12);  // .splice reduce the set of matched elements to a subset specified by a range of indices.
 
       $.each(results, function(key, value){
-        var images = value.multimedia[4].url, 
+        let images = value.multimedia[4].url, 
             abstract = value.abstract,
             newsUrl = value.url; //will take client to a linked site from News App
         article += '<li >';
