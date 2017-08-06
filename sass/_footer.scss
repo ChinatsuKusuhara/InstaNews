@@ -1,14 +1,15 @@
 .copyright {
-  font-family: $openSans;
-	font-weight: 300;
-	font-style: normal;
-  color: $footerFontColor;
-  font-size: 0.75rem;
+    font-family: $openSans;
+    font-weight: 300;
+    font-style: normal;
+    color: $footerFontColor;
+    font-size: 0.75rem;
 }
+
 .footer {
-  text-align: center;
+    text-align: center;
     @include desktop {
-      text-align: inherit;
-      padding-left: 2rem;
+        text-align: inherit;
+        padding-left: 2rem;
     }
 }
