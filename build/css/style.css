@@ -226,3 +226,6 @@ select {
     .footer {
       text-align: inherit;
       padding-left: 2rem; } }
+
+.instaFooter {
+  text-transform: uppercase; }
