@@ -3,7 +3,6 @@ $(function($){
     $('header').addClass('shrink');  //when screen changes
     $('.gif-loader').show();  //loader is displayed none on html.
 
-    
     var selected = $('.drop-down').val();
     var  url = 'https://api.nytimes.com/svc/topstories/v2/' + selected + '.json';  //translation from computer language to English
          url += '?' + $.param({
@@ -17,7 +16,7 @@ $(function($){
       var article = '';
       var results = data.results.filter(function(value){
             return value.multimedia.length >= 5;
-          })  //multimdia array 
+          })  //multimedia array 
           results.splice(12);  // .splice reduce the set of matched elements to a subset specified by a range of indices.
 
       $.each(results, function(key, value){
@@ -33,6 +32,11 @@ $(function($){
       
       $('.news').html(article)//to load within <ul>
       
+     }).fail((err) => {
+       throw err;
      }) //end of .done
-  })  //end of .on
+     .always(() => {
+       $('.git-loader').hide();
+     })
+  });  //end of .on
 }); //end of doc.ready
