@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function($){
   $('.drop-down').on('change', function(){
     $('header').addClass('shrink');  //when screen changes
     $('.gif-loader').show();  //loader is displayed none on html.
