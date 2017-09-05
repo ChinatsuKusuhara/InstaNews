@@ -1,10 +1,11 @@
 $(function(){
-  $('.drop-down').on('change', function(){
+  $('.selectric').selectric();
+  $('.selectric').on('change', function(){
     $('header').addClass('shrink');  //when screen changes
-    $('.gif-loader').show();  //loader is displayed none on html.
+    $('.loader .gif-loader').show();  //loader is displayed none on html.
 
     
-    var selected = $('.drop-down').val();
+    var selected = $('.selectric').val();
     var  url = 'https://api.nytimes.com/svc/topstories/v2/' + selected + '.json';  //translation from computer language to English
          url += '?' + $.param({
           'api-key': '3924f5cbfd774746a80d6b85a0aa79a0'
